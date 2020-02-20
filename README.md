@@ -1,31 +1,10 @@
 # prettier-config
-Threespot’s shareable config for [Prettier](https://prettier.io/)
-
-## Install: 
-
-To install Prettier and prettier-config:
-
-```bash
-$ yarn add prettier-config prettier --dev
-```
-
-If you already installed prettier:
-
-```bash
-$ yarn add prettier-config --dev
-```
+Threespot’s Prettier config settings
 
 ## Usage:
-To enable these rules reference it in your `package.json`:
+To enable the prettier's configuration, make sure you [install prettier](https://prettier.io/docs/en/install.html) as a `devDependency` in your `package.json` file. 
 
-```jsonc
- {
-    // ...
-    "prettier": "prettier-config" 
- }
-```
-
-If you don't want to reference it via `package.json`, visit [prettier's documentation on shareable configuration](https://prettier.io/docs/en/configuration.html#sharing-configurations) to use one of their other options.
+Once prettier is installed, drop `.prettierrc.js` in your project's root directory, and integrate it to your editor of choice. 
 
 ## Editor Integration 
 
