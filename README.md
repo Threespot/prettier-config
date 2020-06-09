@@ -3,39 +3,43 @@ Threespot’s shareable config for [Prettier](https://prettier.io/)
 
 ## Install: 
 
-To install Prettier and prettier-config:
+[Install Prettier if you haven't already](https://prettier.io/docs/en/install.html).
+
+Using `yarn`:
 
 ```bash
-$ yarn add prettier-config prettier --dev
+$ yarn add --dev @threespot/prettier-config
 ```
 
-If you already installed prettier:
-
+Using `npm`:
 ```bash
-$ yarn add prettier-config --dev
+$ npm install --save-dev @threespot/prettier-config
 ```
 
-## Usage:
-To enable these rules reference it in your `package.json`:
+To enable the rules you will have to add the configuration file in your `package.json` as a key/value pair. 
 
 ```jsonc
- {
-    // ...
-    "prettier": "prettier-config" 
+ {	
+   "name": "my-project",
+	 "version": "1.0.0",
+   "prettier": "@threespot/prettier-config",
+   ...
  }
 ```
+If you don't want to add it to your `package.json` file, visit [prettier's documentation on shareable configuration](https://prettier.io/docs/en/configuration.html#sharing-configurations) for other options
 
-If you don't want to reference it via `package.json`, visit [prettier's documentation on shareable configuration](https://prettier.io/docs/en/configuration.html#sharing-configurations) to use one of their other options.
+## Integrating Prettier to your editor for onSave capabilities
+Instead of using prettier's CLI to format your code, you can integrate prettier into your text editor to format your code on save. (recommended)
 
-## Editor Integration 
+To integrate you can find your [specific editor on prettier's website](https://prettier.io/docs/en/editors.html). 
 
-Instead of using prettier's CLI api to format your JavaScript, you can integrate prettier into your text editor. 
+## Batch format project
 
-### VS Code
-1. Install Prettier extension via vscode
-2. Reload the editor
-3. In your user settings, add `editor.formatOnSave: true`
-
-For more information on [VS Code prettier's extension](https://github.com/prettier/prettier-vscode). 
-
-If you are not using VS code, visit [Prettier's editor integration](https://prettier.io/docs/en/editors.html) for instructions on your editor. 
+1. Check your git history to ensure that it is clean
+2. Install `@threespot/prettier-config`
+3. Make sure you have the files you want to whitelist in your `.prettierignore` file 
+4. Run Prettier via CLI either:
+  - Add this script to your `package.json` file: `prettier-format-all: npx prettier --config-precedence prefer-file --write "**/*.js"`
+    - You can now run a batch update using `yarn run prettier-format-all` or `npm run prettier-format-all` 
+  - Alternativel, you can run `npx prettier --config-precedence prefer-file --write "**/*.js"`
+5. Commit all the formatted files into a single commit
