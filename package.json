@@ -1,16 +1,26 @@
 {
-  "name": "prettier-config",
+  "name": "@threespot/prettier-config",
   "version": "1.0.0",
   "description": "Threespot’s Prettier config settings",
   "main": ".prettierrc.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Threespot/prettier-config.git"
+    "url": "git://github.com/Threespot/prettier-config.git"
   },
-  "author": "",
+  "author": "Threespot <hello@threespot.com>",
+  "contributors": [
+    "David Yearwood"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Threespot/prettier-config/issues"
   },
-  "homepage": "https://github.com/Threespot/prettier-config#readme"
+  "homepage": "https://github.com/Threespot/prettier-config#readme",
+  "scripts": {
+    "prettier": "prettier"
+  },
+  "keywords": [
+    "prettier configuration",
+    "prettier config"
+  ]
 }
