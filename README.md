@@ -26,20 +26,32 @@ To enable the rules you will have to add the configuration file in your `package
    ...
  }
 ```
+
 If you don't want to add it to your `package.json` file, visit [prettier's documentation on shareable configuration](https://prettier.io/docs/en/configuration.html#sharing-configurations) for other options
 
 ## Integrating Prettier to your editor for onSave capabilities
 Instead of using prettier's CLI to format your code, you can integrate prettier into your text editor to format your code on save. (recommended)
 
-To integrate you can find your [specific editor on prettier's website](https://prettier.io/docs/en/editors.html). 
+[Instructions for integrating prettier to your specific text editor.](https://prettier.io/docs/en/editors.html)
 
 ## Batch format project
 
+Note: The batching process formats EVERYTHING except for JavaScript files located in node_modules. We recommend whitelisting the files you want prettier to format via `.prettierignore`. You can view an example of the whitelisting pattern in this repo: `.example.prettierignore`. 
+
 1. Check your git history to ensure that it is clean
 2. Install `@threespot/prettier-config`
-3. Make sure you have the files you want to whitelist in your `.prettierignore` file 
-4. Run Prettier via CLI either:
-  - Add this script to your `package.json` file: `prettier-format-all: npx prettier --config-precedence prefer-file --write "**/*.js"`
-    - You can now run a batch update using `yarn run prettier-format-all` or `npm run prettier-format-all` 
-  - Alternativel, you can run `npx prettier --config-precedence prefer-file --write "**/*.js"`
+3. Whitelist the files you want the format to alter in your `.prettierignore` file.
+4. Add this script to your `package.json`:
+    ```jsonc
+    {	
+      "name": "my-project",
+      "version": "1.0.0",
+      "prettier": "@threespot/prettier-config",
+      "scripts": {
+        "prettier-format-all": "npx prettier --config-precedence prefer-file --write \"**/*.js\""
+      }
+    }
+    ```
+    Alternatively you can run: `yarn run prettier-format-all` or `npm run prettier-format-all` in the CLI.
+
 5. Commit all the formatted files into a single commit
