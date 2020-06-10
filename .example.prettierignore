@@ -1,0 +1,18 @@
+# To include a directory that's been excluded you have to use the '!' prefix. This only works if the parent directory of the target directory is NOT excluded. 
+# For more information read below resources: 
+# https://github.com/prettier/prettier/issues/3328
+# https://git-scm.com/docs/gitignore#_examples 
+
+
+# Ignore Everything
+/* 
+
+# Except for our theme directory /web/wp-content/themes/threespot-base
+# Repeat this pattern for each directory you want to include
+!/web/
+/web/*
+!/web/wp-content
+/web/wp-content/*
+!/web/wp-content/themes
+/web/wp-content/themes/*
+!/web/wp-content/themes/threespot-base
