@@ -34,7 +34,7 @@ Note: The batching process formats EVERYTHING except for JavaScript files locate
 3. Whitelist the files you want the format to alter in your `.prettierignore` file.
 4. Add this script to your `package.json`:
 
-    `prettier-format-all: npx prettier --config-precedence prefer-file --write \"**/*.js\`
+    `prettier-format-all: npx prettier --config-precedence prefer-file --write \"**/*.js\"`
     
     Alternatively you can run: `yarn run prettier-format-all` or `npm run prettier-format-all` in the CLI.
 
